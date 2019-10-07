@@ -1,0 +1,50 @@
+.nav {
+	margin-bottom: 20px;
+}
+
+.email {
+	font-family: Consolas, Monaco, Charcoal, Chicago, sans-serif;
+}
+
+span.emailobfuscate {
+	display: none;
+}
+
+h1 {
+	font-size: 30px;
+}
+
+h2 {
+	font-size: 24px;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+.nom {
+	font-size: 30px;
+}
+
+.nav > li.disabled > a:hover,
+.nav > li.disabled > a:focus {
+	cursor: default;
+}
+
+.thumbnail {
+	margin-bottom: 20px;
+}
+
+.caption {
+	text-align:center;
+}
+
+video {
+	width: 100%;
+	height: auto;
+}
+
+.table tbody > tr > th,
+.table tbody > tr > td {
+	vertical-align: middle;
+}

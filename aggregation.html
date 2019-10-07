@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Flavien Léger</title>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+	tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] },
+	TeX: { equationNumbers: {autoNumber: "AMS"} }
+});
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+<body>
+<div class="container">
+
+<ul class="nav nav-tabs">
+
+<li><a href="index.html"><span class="glyphicon glyphicon-home"></span></a></li>
+
+<li class="active"><a href="optimal-transport.html">Research</a></li>
+
+<li><a href="publications.html">Papers</a></li>
+
+<li><a href="teaching.html">Teaching</a></li>
+
+<li><a href="other.html">Other</a></li>
+
+</ul>
+
+
+
+
+<ul class="nav nav-pills">
+
+<li><a href="optimal-transport.html">Optimal Transport</a></li>
+
+<li class="active"><a href="aggregation.html">Aggregation</a></li>
+
+<li><a href="matrixcompletion.html">Matrix Completion</a></li>
+
+</ul>
+
+
+
+<h1>Aggregation</h1>
+<h2>Summary</h2>
+<p>Consider the active scalar problem of motion of a function $\rho(x,t)$ by a velocity field 
+\begin{equation}
+\label{eq:aggregation}
+v=-\nabla N*\rho
+\end{equation}
+where $N$ is the Newtonian potential. Non positive solutions that are compactly supported converge in the long time to a radially symmetric self similar solution.
+</p>
+
+<p>Equation \eqref{eq:aggregation} has solutions of the form 
+$$\rho(x,t)=h(t)\textbf{1}_{\Omega(t)}(x)$$
+which we call patch solutions. $\Omega(t)$ is a subset of $\mathbf{R}^N$. Non negative patch solutions blow up in finite time. Numerically the patches collapse on skeletons of codimension $1$ (see movies, pictures).
+</p>
+
+<h2>Movies!</h2>
+<p>Below are movies of the time evolution of the boundary of a patch $\Omega(t)$, both in 3D and 2D, for non-negative solutions (attraction) as well as (rescaled) non-positive solutions (repulsion).
+</p>
+<p>For the 2D movies, the red curve is the boundary $\partial\Omega(0)$ of the patch at $t=0$, and the evolving green curve is the boundary $\partial\Omega(t)$ of the patch.</p>
+
+<div class="row">
+
+<div class="col-sm-6">
+<div class="thumbnail">
+<video controls poster="resources/ucla/aggregation/movies/cube.png">
+<source src="resources/ucla/aggregation/movies/cube.mp4" type="video/mp4">
+<source src="resources/ucla/aggregation/movies/cube.webm" type="video/webm">
+<source src="resources/ucla/aggregation/movies/cube.ogv" type="video/ogg">
+</video>
+<div class="caption">Cube (attractive, 3D)</div>
+</div>
+</div><!--col-sm-6-->
+
+<div class="col-sm-6">
+<div class="thumbnail">
+<video controls poster="resources/ucla/aggregation/movies/torus.png">
+<source src="resources/ucla/aggregation/movies/torus.mp4" type="video/mp4">
+<source src="resources/ucla/aggregation/movies/torus.web" type="video/webm">
+<source src="resources/ucla/aggregation/movies/torus.ogv" type="video/ogg">
+</video>
+<div class="caption">Square torus (attractive, 3D)</div>
+</div>
+</div><!--col-sm-6-->
+
+<div class="col-sm-6">
+<div class="thumbnail">
+<video controls poster="resources/ucla/aggregation/movies/attractive_smooth_square.png">
+<source src="resources/ucla/aggregation/movies/attractive_smooth_square.mp4" type="video/mp4">
+<source src="resources/ucla/aggregation/movies/attractive_smooth_square.webm" type="video/webm">
+<source src="resources/ucla/aggregation/movies/attractive_smooth_square.ogv" type="video/ogg">
+</video>
+<div class="caption">Smooth square (attraction, 2D)</div>
+</div>
+</div><!--col-sm-6-->
+
+<div class="col-sm-6">
+<div class="thumbnail">
+<video controls poster="resources/ucla/aggregation/movies/attractive_annulus.png">
+<source src="resources/ucla/aggregation/movies/attractive_annulus.mp4" type="video/mp4">
+<source src="resources/ucla/aggregation/movies/attractive_annulus.webm" type="video/webm">
+<source src="resources/ucla/aggregation/movies/attractive_annulus.ogv" type="video/ogg">
+</video>
+<div class="caption">Elliptical annulus (attraction, 2D)</div>
+</div>
+</div><!--col-sm-6-->
+
+<div class="col-sm-6">
+<div class="thumbnail">
+<video controls poster="resources/ucla/aggregation/movies/attractive_two_disks.png">
+<source src="resources/ucla/aggregation/movies/attractive_two_disks.mp4" type="video/mp4">
+<source src="resources/ucla/aggregation/movies/attractive_two_disks.webm" type="video/webm">
+<source src="resources/ucla/aggregation/movies/attractive_two_disks.ogv" type="video/ogg">
+</video>
+<div class="caption">Non connected shape: two disks (attraction, 2D)</div>
+</div>
+</div><!--col-sm-6-->
+
+<div class="col-sm-6">
+<div class="thumbnail">
+<video controls poster="resources/ucla/aggregation/movies/repulsive_smooth_star.png">
+<source src="resources/ucla/aggregation/movies/repulsive_smooth_star.mp4" type="video/mp4">
+<source src="resources/ucla/aggregation/movies/repulsive_smooth_star.webm" type="video/webm">
+<source src="resources/ucla/aggregation/movies/repulsive_smooth_star.ogv" type="video/ogg">
+</video>
+<div class="caption">Smooth star (repulsion, 2D)</div>
+</div>
+</div><!--col-sm-6-->
+
+</div><!--row-->
+
+
+<h2>Pictures</h2>
+
+<div class="row">
+
+<div class="col-md-4 col-sm-12">
+<p>
+Two examples of contour dynamics for the rescaled spreading problem in two dimensions.</p>
+<p>
+Fig. (a)-(b) show snapshots of the boundary evolution of a patch. At time s = 10 the patch has reached steady state. The initial boundary is shown as a red dashed line and the long time limit (s = 10) is shown as a green solid line.</p>
+<p>
+Fig. (b) exhibits the "pinching phenomena" of the boundary. 
+</p>
+</div><!--col-md-4 col-sm-12-->
+
+<div class="col-md-4 col-sm-6">
+<div class="thumbnail">
+<a href="resources/ucla/aggregation/images/repulsive_smoothpoly_nodefault.png" class="thumbnail">
+<img src="resources/ucla/aggregation/images/repulsive_smoothpoly_nodefault.png" alt="Repulsive smooth polygon, no pinching">
+</a>
+<div class="caption">(a) Smooth star, no pinching</div>
+</div>
+</div><!--col-md-4 col-sm-6-->
+
+<div class="col-md-4 col-sm-6">
+<div class="thumbnail">
+<a href="resources/ucla/aggregation/images/repulsive_smoothpoly_defaults.png" class="thumbnail">
+<img src="resources/ucla/aggregation/images/repulsive_smoothpoly_defaults.png" alt="Repulsive smooth polygon with pinching">
+</a>
+<div class="caption">(b) Smooth star with pinching</div>
+</div>
+</div><!--col-md-4 col-sm-6-->
+
+</div><!--row-->
+
+
+<h2>References</h2>
+<p>A. Bertozzi, T. Laurent, and F. Léger. <a href="http://www.math.ucla.edu/~bertozzi/papers/Patch-Galley.pdf">Aggregation via the Newtonian potential and aggregation patches</a>. <em>M3AS</em>, vol. 22, Supp. 1, 2012.
+</p>
+
+
+
+</div><!--container-->
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Flavien Léger</title>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+	tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] },
+	TeX: { equationNumbers: {autoNumber: "AMS"} }
+});
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+<body>
+<div class="container">
+
+<ul class="nav nav-tabs">
+
+<li><a href="index.html"><span class="glyphicon glyphicon-home"></span></a></li>
+
+<li class="active"><a href="optimal-transport.html">Research</a></li>
+
+<li><a href="publications.html">Papers</a></li>
+
+<li><a href="teaching.html">Teaching</a></li>
+
+<li><a href="other.html">Other</a></li>
+
+</ul>
+
+
+
+
+<ul class="nav nav-pills">
+
+<li class="active"><a href="optimal-transport.html">Optimal Transport</a></li>
+
+<li><a href="aggregation.html">Aggregation</a></li>
+
+<li><a href="matrixcompletion.html">Matrix Completion</a></li>
+
+</ul>
+
+
+<h1>Optimal Transport: the back-and-forth method</h1>
+
+<p>This page illustrates the method proposed in: <a href="https://arxiv.org/pdf/1905.12154.pdf">A fast approach to optimal transport: The back-and-forth method</a> <a href="#ref2">[2]</a>. 
+</p>
+
+<h2>Videos</h2>
+
+<p>The following videos illustrate displacement interpolation between two uniform probability densities supported on a domain (in white here).
+</p>
+
+<div class="row">
+		<div class="col-sm-6">
+		<div class="thumbnail">
+			<video controls poster="resources/ucla/ot/caffarelli.png">
+				<source src="resources/ucla/ot/caffarelli.mp4" type="video/mp4">
+			</video>
+		<div class="caption">Caffarelli's counterexample <a href="#ref1">[1]</a>. (<a href="resources/ucla/ot/caffarelli_2048x2048.mp4">High resolution version [2048x2048]</a>)</div>
+		</div>
+	</div><!--col-sm-6-->
+
+	<div class="col-sm-6">
+		<div class="thumbnail">
+			<video controls poster="resources/ucla/ot/santambrogio-wang.png">
+				<source src="resources/ucla/ot/santambrogio-wang_512_from_4096.mp4" type="video/mp4">
+			</video>
+		<div class="caption">Santambrogio–Wang's convexity counterexample <a href="#ref3">[3]</a>. (<a href="resources/ucla/ot/santambrogio-wang_2048_from_4096.mp4">High resolution version [2048x2048]</a>)</div>
+		</div>
+	</div><!--col-sm-6-->
+	
+
+	<div class="col-sm-6">
+		<div class="thumbnail">
+			<video controls poster="resources/ucla/ot/rect-to-ring.png">
+				<source src="resources/ucla/ot/rect-to-ring.mp4" type="video/mp4">
+			</video>
+		<div class="caption">Rectangle to ring. (<a href="resources/ucla/ot/rect-to-ring_2048x2048.mp4">High resolution version [2048x2048]</a>)</div>
+		</div>
+	</div><!--col-sm-6-->
+	
+	
+	<div class="col-sm-6">
+		<div class="thumbnail">
+			<video controls poster="resources/ucla/ot/cat-to-paw.png">
+				<source src="resources/ucla/ot/cat-to-paw.mp4" type="video/mp4">
+			</video>
+		<div class="caption">Cat to cat paw.</div>
+		</div>
+	</div><!--col-sm-6-->
+	
+	<div class="col-sm-6">
+		<div class="thumbnail">
+			<video controls poster="resources/ucla/ot/shark-to-circles.png">
+				<source src="resources/ucla/ot/shark-to-circles.mp4" type="video/mp4">
+			</video>
+		<div class="caption">Shark to circles.</div>
+		</div>
+	</div><!--col-sm-6-->
+</div><!--row-->
+
+<h2>Caffarelli's counterexample</h2>
+<p>In <a href="#ref1">[1]</a> Caffarelli showed that the optimal transport map can be discontinuous when a measure is supported on a non-convex domain.
+</p>
+
+<div class="row">
+	<div class="col-sm-6">
+		<div class="thumbnail">
+			<a href="resources/ucla/ot/caffarelli/xMap_plasma_4096.png" class="thumbnail"><img src="resources/ucla/ot/caffarelli/xMap_plasma_4096.png" alt="Caffarelli's xMap"></a>
+	<div class="caption">Support of the initial density. Colors represent the mapping from initial density to final density.</div>
+		</div>
+	</div><!--col-sm-6-->
+	
+	<div class="col-sm-6">
+		<div class="thumbnail">
+			<a href="resources/ucla/ot/caffarelli/x_plasma_4096.png" class="thumbnail"><img src="resources/ucla/ot/caffarelli/x_plasma_4096.png" alt="Caffarelli's xMap"></a>
+	<div class="caption">Support of the final density.</div>
+		</div>
+	</div><!--col-sm-6-->
+</div><!--row-->
+
+
+<h2>Santambrogio–Wang's counterexample</h2>
+<p>In <a href="#ref3">[3]</a> Santambrogio and Wang showed that the displacement interpolant between two uniform measures supported on convex domains needs not be supported on convex domains. The following shows snapshots at time t=0, t=1/2 and t=1 of their counterexample. Note indeed that the initial and final measures (t=0 and t=1 respectively) are supported on a convex shape (a triangle) while the displacement interpolation at t=1/2 is not.
+</p>
+
+<div class="row">
+	<div class="col-sm-4">
+		<div class="thumbnail">
+			<a href="resources/ucla/ot/santambrogio-wang/mu.png" class="thumbnail"><img src="resources/ucla/ot/santambrogio-wang/mu.png" alt="Santambrogio-Wang's initial density"></a>
+	<div class="caption">Time t=0.</div>
+		</div>
+	</div><!--col-sm-4-->
+	
+	<div class="col-sm-4">
+		<div class="thumbnail">
+			<a href="resources/ucla/ot/santambrogio-wang/rho.png" class="thumbnail"><img src="resources/ucla/ot/santambrogio-wang/rho.png" alt="Santambogio-Wang's barycenter"></a>
+	<div class="caption">Time t=1/2.</div>
+		</div>
+	</div><!--col-sm-4-->
+	
+<div class="col-sm-4">
+		<div class="thumbnail">
+			<a href="resources/ucla/ot/santambrogio-wang/nu.png" class="thumbnail"><img src="resources/ucla/ot/santambrogio-wang/nu.png" alt="Santambogio-Wang's final density"></a>
+	<div class="caption">Time t=1.</div>
+		</div>
+	</div><!--col-sm-4-->
+</div><!--row-->
+
+<p>Below we show how mass is transported optimally from the initial measure to the final measure.
+</p>
+
+<div class="row">
+	<div class="col-sm-6">
+		<div class="thumbnail">
+			<a href="resources/ucla/ot/santambrogio-wang/xMap_plasma_4096.png" class="thumbnail"><img src="resources/ucla/ot/santambrogio-wang/xMap_plasma_4096.png" alt="Santambrogio-Wang's xMap"></a>
+	<div class="caption">Support of the initial density. Colors represent the mapping from initial density to final density.</div>
+		</div>
+	</div><!--col-sm-6-->
+	
+	<div class="col-sm-6">
+		<div class="thumbnail">
+			<a href="resources/ucla/ot/santambrogio-wang/x_plasma_4096.png" class="thumbnail"><img src="resources/ucla/ot/santambrogio-wang/x_plasma_4096.png" alt="Santambogio-Wang's xMap"></a>
+	<div class="caption">Support of the final density.</div>
+		</div>
+	</div><!--col-sm-6-->
+</div><!--row-->
+
+
+
+<h2>Rectangle to ring</h2>
+
+<div class="row">
+	<div class="col-sm-6">
+		<div class="thumbnail">
+			<a href="resources/ucla/ot/rectangle-to-ring/xMap_plasma_4096.png" class="thumbnail"><img src="resources/ucla/ot/rectangle-to-ring/xMap_plasma_4096.png" alt="xMap"></a>
+	<div class="caption">Support of the initial density. Colors represent the mapping from initial density to final density.</div>
+		</div>
+	</div><!--col-sm-6-->
+	
+	<div class="col-sm-6">
+		<div class="thumbnail">
+			<a href="resources/ucla/ot/rectangle-to-ring/x_plasma_4096.png" class="thumbnail"><img src="resources/ucla/ot/rectangle-to-ring/x_plasma_4096.png" alt="xId"></a>
+	<div class="caption">Support of the final density.</div>
+		</div>
+	</div><!--col-sm-6-->
+</div><!--row-->
+
+
+<h2>Software</h2>
+<p>Coming soon.</p>
+
+<h2>References</h2>
+<p id="ref1">
+[1] Luis A. Caffarelli. The regularity of mappings with a convex potential. J. Amer. Math. Soc. 5, 1 (1992), 99–104.
+</p>
+<p id="ref2">
+[2] Matt Jacobs and Flavien Léger. <a href="https://arxiv.org/pdf/1905.12154.pdf">A fast approach to optimal transport: The back-and-forth method</a>. 2019.
+</p>
+<p id="ref3">
+[3] Filippo Santambrogio and Xu-Jia Wang. Convexity of the support of the displacement interpolation: Counterexamples. Appl. Math. Letters 58 (2016), 152–158.
+</p>
+
+
+
+</div><!--container-->
+</body>
+</html>
