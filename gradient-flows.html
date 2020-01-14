@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Flavien Léger</title>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+	tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] },
+	TeX: { equationNumbers: {autoNumber: "AMS"} }
+});
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+<body>
+<div class="container">
+
+<ul class="nav nav-tabs">
+
+<li><a href="index.html"><span class="glyphicon glyphicon-home"></span></a></li>
+
+<li class="active"><a href="optimal-transport.html">Research</a></li>
+
+<li><a href="publications.html">Papers</a></li>
+
+<li><a href="teaching.html">Teaching</a></li>
+
+<li><a href="other.html">Other</a></li>
+
+</ul>
+
+
+
+
+<ul class="nav nav-pills">
+
+<li><a href="optimal-transport.html">Optimal Transport</a></li>
+
+<li class="active"><a href="gradient-flows.html">Gradient Flows</a></li>
+
+<li><a href="aggregation.html">Aggregation</a></li>
+
+<li><a href="matrixcompletion.html">Matrix Completion</a></li>
+
+</ul>
+
+
+<h1>Wasserstein gradient flows</h1>
+<p>The <a href="https://arxiv.org/pdf/1905.12154.pdf">back-and-forth method</a> <a href="#ref2">[2]</a> can be generalized to compute Wasserstein gradient flows (work in progress). 
+</p>
+
+<h2>Videos</h2>
+
+<p>Here are a few examples of gradient flows of the entropy
+\begin{equation}
+F(\rho) = \gamma\int\rho(x)\ln\rho(x)\,dx + \int V(x)\,\rho(x)\,dx,
+\end{equation}
+where $V\colon\mathbb{R}^2\to\mathbb{R}\cup\{+\infty\}$ is a potential energy.
+</p>
+
+<div class="row">
+		<div class="col-sm-6">
+		<div class="thumbnail">
+			<video controls poster="resources/ucla/gf/star-obstacle.png">
+				<source src="resources/ucla/gf/star-obstacle.mp4" type="video/mp4">
+			</video>
+		<div class="caption">Here $V(x)=\iota_{S}(x)+\frac{1}{2}\lVert x-a \rVert^2$, where $S$ is the star domain and $a$ the lower right corner.</div>
+		</div>
+	</div><!--col-sm-6-->
+</div><!--row-->
+
+
+
+
+<h2>References</h2>
+<p id="ref1">
+[1] 
+</p>
+<p id="ref2">
+[2] Matt Jacobs and Flavien Léger. <a href="https://arxiv.org/pdf/1905.12154.pdf">A fast approach to optimal transport: The back-and-forth method</a>. 2019.
+</p>
+<p id="ref3">
+[3] Richard Jordan and David Kinderlehrer and Felix Otto .The variational formulation of the Fokker-Planck equation. SIAM journal on mathematical analysis 29.1 (1998): 1–17.
+</p>
+
+
+
+</div><!--container-->
+</body>
+</html>
