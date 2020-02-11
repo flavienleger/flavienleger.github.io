@@ -57,6 +57,20 @@ MathJax.Hub.Config({
 
 <h1>Sinkhorn and the Schrödinger bridge problem</h1>
 
+<h2>Schrödinger bridges</h2>
+<p>Consider the variational problem
+\begin{equation}
+\inf_{\rho,b} \int_0^1\!\!\!\!\int\frac{1}{2}|b_t(x)|^2\,\rho_t(x)\,dx\,dt,
+\end{equation}
+where the infimum runs over densities $\rho$ and vector field $b$ such that 
+\begin{equation*}
+\partial_t\rho + \mathrm{div}(\rho b) = \gamma\Delta\rho,
+\end{equation*}
+and the boundary conditions $\rho_0=\mu$ and $\rho_1=\nu$ for fixed densities $\mu$ and $\nu$. The parameter $\gamma > 0$ is a diffusion coefficient. The resulting solution $\rho$ is called the Schrödinger bridge between $\mu$ and $\nu$. 
+</p>
+
+
+
 <h2>Videos</h2>
 
 <p>Here are a few examples of Schrödinger bridges via Sinkhorn computations.
@@ -68,7 +82,16 @@ MathJax.Hub.Config({
 			<video controls poster="resources/paris/sh/disk_to_disk.png">
 				<source src="resources/paris/sh/disk_to_disk.mp4" type="video/mp4">
 			</video>
-		<div class="caption"></div>
+		<div class="caption">$\gamma=0.1$</div>
+		</div>
+	</div><!--col-sm-6-->
+
+	<div class="col-sm-6">
+		<div class="thumbnail">
+			<video controls poster="resources/paris/sh/square_to_disk_eps0.01.png">
+				<source src="resources/paris/sh/square_to_disk_eps0.01.mp4" type="video/mp4">
+			</video>
+		<div class="caption">$\gamma=0.01$</div>
 		</div>
 	</div><!--col-sm-6-->
 </div><!--row-->
