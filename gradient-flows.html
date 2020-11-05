@@ -57,16 +57,26 @@ MathJax.Hub.Config({
 
 
 <h1>Wasserstein gradient flows</h1>
-<p>The <a href="https://arxiv.org/pdf/1905.12154.pdf">back-and-forth method</a> <a href="#ref2">[2]</a> can be generalized to compute Wasserstein gradient flows (work in progress). 
+<p>The back-and-forth method <a href="#ref2">[2]</a> can be generalized to compute <em>Wasserstein gradient flows</em> <a href="#ref1">[1]</a>, via the so-called JKO scheme <a href="#ref3">[3]</a>. This allows to efficiently solve a large class of interesting PDEs.
 </p>
 
-<h2>Videos</h2>
+<p>
+Let $\Omega=[0,1]^2$, we consider below various functionals $U(\rho)$ (both convex and convex+concave). 
+</p>
 
-<p>Here are a few examples of gradient flows of the entropy
-\begin{equation}
-F(\rho) = \gamma\int\rho(x)\ln\rho(x)\,dx + \int V(x)\,\rho(x)\,dx,
-\end{equation}
-where $V\colon\mathbb{R}^2\to\mathbb{R}\cup\{+\infty\}$ is a potential energy.
+
+
+<h2>Porous medium equation</h2>
+
+<p>Let
+\begin{equation*}
+U(\rho) = \frac{\gamma}{m-1}\int_\Omega\rho(x)^m\,dx + \int_\Omega V(x)\,\rho(x)\,dx,
+\end{equation*}
+where $V\colon\mathbb{R}^2\to\mathbb{R}\cup\{+\infty\}$ is a potential energy. The Wasserstein gradient flow of $U$ is the PDE
+$$
+\partial_t\rho +\mathrm{div}(\rho (-\nabla V))= \gamma\Delta \rho^m,
+$$
+together with Neumann boundary conditions and an initial condition $\rho(0,\cdot) = \rho_0$. 
 </p>
 
 <div class="row">
@@ -82,10 +92,19 @@ where $V\colon\mathbb{R}^2\to\mathbb{R}\cup\{+\infty\}$ is a potential energy.
 
 
 
+<h2>Incompressible case</h2>
+
+<h2>Heat equation</h2>
+<p>Here are a few examples of gradient flows of the functional
+\begin{equation}
+U(\rho) = \gamma\int\rho(x) \ln\rho(x)\,dx + \int V(x)\,\rho(x)\,dx,
+\end{equation}
+where $V\colon\mathbb{R}^2\to\mathbb{R}\cup\{+\infty\}$ is a potential energy.
+</p>
 
 <h2>References</h2>
 <p id="ref1">
-[1] 
+[1] Matt Jacobs, Wonjun Lee and Flavien Léger. The back-and-forth method for Wasserstein gradient flows, in progress.
 </p>
 <p id="ref2">
 [2] Matt Jacobs and Flavien Léger. <a href="https://arxiv.org/pdf/1905.12154.pdf">A fast approach to optimal transport: The back-and-forth method</a>. 2019.
