@@ -61,13 +61,31 @@ MathJax.Hub.Config({
 <p>This page illustrates the method proposed in: <a href="https://arxiv.org/pdf/1905.12154.pdf">A fast approach to optimal transport: The back-and-forth method</a> <a href="#ref2">[2]</a>. 
 </p>
 
+<p>
+We are interested in the optimal transport problem
+
+$$\frac 1 2 W_2(\mu,\nu)^2=\min_{T_{\#}\mu=\nu} \int_{\Omega} \frac 1 2 \lVert T(x)-x\rVert^2 \,\mu(x)dx,$$
+
+on the unit square $\Omega=[0,1]^2$. Here $\mu$ and $\nu$ are two densities on $\Omega$, and $\lVert x-y\rVert^2=(x_1-y_1)^2+(x_2-y_2)^2$.
+
+The code solves the dual Kantorovich problem
+
+$$\max_{\phi,\psi} \int_{\Omega} \phi(y)\,\nu(y)dy + \int_{\Omega} \psi(x)\,\mu(x)dx,$$
+over functions $\phi,\psi\colon\Omega\to\mathbb{R}$ satisfying the constraints
+
+$$\phi(y)+\psi(x)\le \frac 1 2 \lVert x-y\rVert^2.$$
+</p>
+
 
 
 <h2>Code</h2>
-<p>The code used in the paper is <a href="https://github.com/Math-Jacobs/bfm">available on GitHub</a>. Documentation <a href="https://back-and-forth.netlify.app/">available here</a>.
+<p>The code used in the paper is <a href="https://github.com/Math-Jacobs/bfm">available on GitHub</a>. Documentation <a href="https://back-and-forth.netlify.app/">available here</a>. </p>
+
+<p>Code was written in C and packaged in both Python and MATLAB.
 </p>
 
-<p><span class="glyphicon glyphicon-hand-right"></span> The simplest way to use the code is to run <a href="https://colab.research.google.com/drive/1Uml2n4MIVDZnviEHEMFrJIdMwYDOPHax?usp=sharing">this Jupyter notebook on Google Colab</a>. Or <a href="https://github.com/Math-Jacobs/bfm/blob/main/python/example.ipynb">see it on GitHub</a>. 
+<h2>Python notebook</h2>
+<p>The simplest way to use the code is to run <a href="https://colab.research.google.com/drive/1Uml2n4MIVDZnviEHEMFrJIdMwYDOPHax?usp=sharing">this Jupyter notebook</a> on Google Colab. Or <a href="https://github.com/Math-Jacobs/bfm/blob/main/python/example.ipynb">see it on GitHub</a>. 
 </p>
 
 
